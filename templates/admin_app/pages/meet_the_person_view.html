@@ -1,0 +1,48 @@
+{% extends "admin_app/components/base.html" %}
+{% load static %}
+{% block content %}
+<link href="{% static 'django_ckeditor_5/dist/styles.css' %}" type="text/css" media="all" rel="stylesheet">
+<script src="{% static 'django_ckeditor_5/dist/bundle.js' %}"></script>
+
+<div class="page-content-wrapper mt-3">
+    <div class="d-flex justify-content-end pb-3">
+        <a href="{% url 'meet_the_person_edit' meet_the_person.id %}">
+            <button class="btn btn-success mr-3">Edit</button>
+        </a>
+        <a href="{% url 'meet_the_person_delete' meet_the_person.id %}" 
+            onclick="return confirm('Do you want to delete this ?')">
+            <button class="btn btn-danger">Delete</button>
+        </a>
+    </div>
+    <div class="card">
+        <div class="card-header">
+
+            <div class="text-center">
+                {% if meet_the_person.image %}
+                <a href="{{ meet_the_person.image.url }}" target="_blank">
+                    <img src="{{ meet_the_person.image.url }}" alt="" width="100%" style="max-width: 100px;">
+                </a>
+
+                {% else %}
+                None
+                {% endif %}
+                <h6>{{ meet_the_person.title }}</h6>
+                <h6>Date : {{ meet_the_person.date }}</h6>
+                <h6>Author : {{ meet_the_person.author }}</h6>
+            </div>
+
+        </div>
+        <div class="card-body">
+
+            <div class="ck ck-content">
+                {{ meet_the_person.text|safe}}
+            </div>
+        </div>
+    </div>
+
+</div> <!-- Page content Wrapper -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+{% endblock content %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Cinema Journal</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Mannatthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="shortcut icon" href="{% static 'admin_app/assets/images/favicon.ico">
+
+        <link href="{% static 'admin_app/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'admin_app/assets/css/icons.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'admin_app/assets/css/style.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+
+
+    <body class="fixed-left">
+
+        <div class="accountbg"></div>
+        <div class="wrapper-page">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="text-center m-b-15">
+                        <!-- <a href="{% url 'home' %}" class="logo logo-admin"><img src="{% static 'admin_app/assets/images/logo.png' %}" height="24" alt="logo"></a> -->
+                        <a href="{% url 'home' %}" class="logo-admin">Cinema Journal</a>
+                    </div>
+
+                    <div class="p-3">
+                        <form class="form-horizontal m-t-20" role="form" method="post">
+                            {% csrf_token %}
+                            {% if error %}
+                                <p style="color: red;">{{ error }}</p>
+                            {% endif %}
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="text" name="username" required placeholder="Username">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="password" name="password" required placeholder="Password">
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="form-group text-center row m-t-20">
+                                <div class="col-12">
+                                    <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Log In</button>
+                                </div>
+                            </div>
+
+                            
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery  -->
+        <script src="{% static 'admin_app/assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/popper.min.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/modernizr.min.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/detect.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/fastclick.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/waves.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/jquery.nicescroll.js' %}"></script>
+        <script src="{% static 'admin_app/assets/js/jquery.scrollTo.min.js' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static 'admin_app/assets/js/app.js' %}"></script>
+
+    </body>
+</html>

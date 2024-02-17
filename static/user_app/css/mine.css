@@ -1,0 +1,25 @@
+
+.d-flex {
+    display: flex !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.justify-content-end {
+    justify-content: end;
+}
+.text-justify {
+    text-align: justify !important;
+}
+
+.btn-mine {
+    background-color: #fff;
+    color: #000;
+}
+.btn-mine:hover {
+    background-color: #4d47b3;
+    color: #fff;
+}
+.mt-1 {
+    margin-top: 10px !important;
+}

@@ -1,0 +1,452 @@
+{% extends "user_app/components/base.html" %}
+{% load static %}
+{% block content %}
+<!-- ne tranding slider Start -->
+<div class="ne_ts_main_section_wrapper hidden-xs">
+    <div class="container">
+        <div class="ne_ts_inner_wrapper">
+            <div class="ne_tran_label_wrapper">
+                <h3>Flash News</h3>
+            </div>
+            <div class="ne_tranding_slider_wrapper">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="ne_ts_inner_content">
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
+                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ne_ts_inner_content">
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
+                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ne_ts_inner_content">
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
+                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--slider wrapper start-->
+
+
+
+
+<!--0 news Start-->
+<div class="ne_recent_news_main_wrapper space-t">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="ne_recent_left_side_wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_busness_main_slider_wrapper www">
+                                        <div class="ne_recent_heading_main_wrapper">
+                                            <h2>Latest Release</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_sport_slider_wrapper">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="row">
+                                                    {% for latest_release in latest_releases_one %}
+                                                    <a href="{% url 'latest_release_details' latest_release.slug %}">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
+                                                            <div class="ne_wn_img_main_wrapper"
+                                                                {% if latest_release.image %}
+                                                                    style="background: url('{{ latest_release.image.url }}') 50% 0 repeat-y;"
+                                                                {% endif %}>
+                                                                <div class="ne_wn_img_overlay"></div>
+                                                                <h2>latest release</h2>
+                                                                <div class="ne_wn_social_inner_wrapper">
+                                                                    <h6><a href="{% url 'latest_release_details' latest_release.slug %}" style="color: #fff;">{{ latest_release.title|truncatechars:50 }}</a></h6>
+                                                                    <ul class="ne_wn_social1_wrapper">
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="{% url 'latest_release_details' latest_release.slug %}"><i class="fa fa-calendar"></i>
+                                                                                &nbsp;25 OCT, 2017</a>
+                                                                        </li>
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="{% url 'latest_release_details' latest_release.slug %}"><i class="fa fa-user"></i>
+                                                                                &nbsp;Author</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    
+
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="row">
+                                                    {% for latest_release in latest_releases_two %}
+                                                    <a href="{% url 'latest_release_details' latest_release.slug %}">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
+                                                            <div class="ne_wn_img_main_wrapper"
+                                                                {% if latest_release.image %}
+                                                                    style="background: url('{{ latest_release.image.url }}') 50% 0 repeat-y;"
+                                                                {% endif %}>
+                                                                <div class="ne_wn_img_overlay"></div>
+                                                                <h2>latest release</h2>
+                                                                <div class="ne_wn_social_inner_wrapper">
+                                                                    <h6><a href="#" style="color: #fff;">{{ latest_release.title|truncatechars:50 }}</a></h6>
+                                                                    <ul class="ne_wn_social1_wrapper">
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="#"><i class="fa fa-calendar"></i>
+                                                                                &nbsp;25 OCT, 2017</a>
+                                                                        </li>
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="#"><i class="fa fa-user"></i>
+                                                                                &nbsp;Author</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                    {% endfor %}
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'latest_release' %}" >
+                                    <button class="btn btn-mine">View More..</button>
+                                </a>
+                                
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------->
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="ne_indx_sidebar_main_wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="ne_sidebar_inner_social_wrapper ne_sidebar_second_inner_social_wrapper">
+
+                                <div class="" style="margin-top: 50px;">
+                                    <a href="#">
+                                        <img src="{% static 'user_app/images/content/advertiz.jpg' %}" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="ne_sidebar_inner_social_wrapper ne_sidebar_second_inner_social_wrapper">
+
+                                <div class="" style="margin-top: 50px;">
+                                    <a href="#">
+                                        <img src="{% static 'user_app/images/content/advertiz.jpg' %}" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--0 news End-->
+
+
+<!--1 news Start-->
+<div class="ne_recent_news_main_wrapper space-t">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="ne_recent_left_side_wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_busness_main_slider_wrapper">
+                                        <div class="ne_recent_heading_main_wrapper">
+                                            <h2>Location and Reports</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_sport_slider_wrapper">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="row">
+                                                    {% for location_report in location_reports_one %}
+                                                    <a href="{% url 'location_report_details' location_report.slug %}">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="ne_re_left_top_main_wrapper">
+                                                                <div
+                                                                    class="ne_re_left_img_main_wrapper ne_re_left_img_main_wrapper2">
+                                                                    {% if location_report.image %}
+                                                                        <img src="{{ location_report.image.url }}" alt="img">
+                                                                    {% else %}
+                                                                        <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">
+                                                                    {% endif %}
+                                                                    <h2>location report</h2>
+                                                                </div>
+                                                                <div class="ne_re_left_img_cont_main_wrapper">
+                                                                    <!-- <h3><a href="#">Award of the year</a></h3> -->
+                                                                    <ul class="ne_re_social1_wrapper">
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="#"><i class="fa fa-calendar"></i>
+                                                                                &nbsp;25 OCT, 2017</a>
+                                                                        </li>
+                                                                        <li data-animation="animated fadeInLeft"><a
+                                                                                href="#"><i class="fa fa-user"></i>
+                                                                                &nbsp;Author</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p>{{ location_report.title|truncatechars:100 }}</p>                                                                </p>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    {% endfor %}
+                                                    {% for location_report in location_reports_two %}
+                                                    <a href="{% url 'location_report_details' location_report.slug %}">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
+                                                            <div
+                                                                class="ne_re_left_bottom_main_wrapper ne_re_left_bottom_main_wrapper_top">
+                                                                <div class="ne_re_bottom_img">
+                                                                    {% if location_report.image %}
+                                                                        <img src="{{ location_report.image.url }}" alt="img">
+                                                                    {% else %}
+                                                                        <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">
+                                                                    {% endif %}
+                                                                </div>
+                                                                <div class="ne_re_bottom_img_cont">
+                                                                    <h6>
+                                                                        <a class="maxLength50" style="font-weight: 500;" href="#">
+                                                                            {{ location_report.title|truncatechars:100 }}
+                                                                        </a>
+                                                                        
+                                                                    </h6>
+
+                                                                        
+
+                                                                    <p><a href="#" style="font-size: 11px;"><i class="fa fa-calendar"></i>
+                                                                            &nbsp;25 OCT, 2017</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </a>
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'location_report' %}" >
+                                    <button class="btn btn-mine">View More..</button>
+                                </a>
+                                
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------->
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="ne_indx_sidebar_main_wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="ne_sidebar_inner_social_wrapper ne_sidebar_second_inner_social_wrapper">
+
+                                <div class="" style="margin-top: 30px;">
+                                    <a href="#">
+                                        <img src="{% static 'user_app/images/content/advertiz.jpg' %}" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="ne_sidebar_inner_social_wrapper ne_sidebar_second_inner_social_wrapper">
+
+                                <div class="">
+                                    <a href="#">
+                                        <img src="{% static 'user_app/images/content/advertiz.jpg' %}" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--1 news End-->
+
+<!--2 news start-->
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="ne_recent_left_side_wrapper">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_busness_main_slider_wrapper">
+                                        <div class="ne_recent_heading_main_wrapper">
+                                            <h2>Meet the Person</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_businees_slider_wrapper">
+                                        <div class="owl-carousel owl-theme">
+                                            {% for meet_the_person in meet_the_persons %}
+                                            
+                                                <div class="item">
+                                                    <a href="{% url 'meet_the_person_details' meet_the_person.slug %}">
+                                                        <div class="ne_re_left_top_main_wrapper">
+                                                            <div class="ne_re_left_img_main_wrapper">
+                                                                <img src="{% static 'user_app/images/content/sp1.jpg' %}"
+                                                                    alt="img">
+                                                                <h2>Meet the Person</h2>
+                                                            </div>
+                                                            <div
+                                                                class="ne_re_left_img_cont_main_wrapper ne_buss_img_cont_main_wrapper pt-1">
+                                                                <h6><a href="#">{{ meet_the_person.title|truncatechars:70 }}</a></h6>
+                                                                <ul class="ne_re_social1_wrapper">
+                                                                    <li data-animation="animated fadeInLeft"><a href="#"><i
+                                                                                class="fa fa-calendar"></i> &nbsp;25 OCT,
+                                                                            2017</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            
+                                            {% endfor %}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end mt-1">
+                                <a href="{% url 'meet_the_person' %}" >
+                                    <button class="btn btn-mine">View More..</button>
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--2 news End-->
+
+<!--fullwidth Start-->
+<div class="fullwidth_wrapper space-t space-b">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="ne_busness_main_slider_wrapper aaaaa">
+            <div class="ne_recent_heading_main_wrapper middle_heading ">
+                <h2>Teaser and Promos</h2>
+            </div>
+        </div>
+    </div>
+    {% if teaser_and_promoses|length >= 3 %}
+        <div class="wrap-album-slider">
+            <ul class="album-slider">
+                {% for teaser_and_promose in teaser_and_promoses %}
+                <a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}">
+                    <li class="album-slider__item">
+                        <figure class="album">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="ne_re_left_top_main_wrapper">
+                                        <div class="ne_re_left_img_main_wrapper yellow" >
+                                            <img src="{{ teaser_and_promose.image.url }}" alt="img">
+                                            <h2 style="font-size: 12px;">Teaser and Promos</h2>
+                                        </div>
+                                        <div class="ne_re_left_img_cont_main_wrapper">
+                                            
+                                            <ul class="ne_re_social1_wrapper">
+                                                <li data-animation="animated fadeInLeft"><a href="#"><i
+                                                            class="fa fa-calendar"></i> &nbsp;{{ teaser_and_promose.date }}</a>
+                                                </li>
+                                                <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-user"></i>
+                                                        &nbsp;Author</a>
+                                                </li>
+                                            </ul>
+                                            <p>{{ teaser_and_promose.title|truncatechars:100 }}</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <!-- End album -->
+                    </li>
+                </a>
+                {% endfor %}
+                
+            </ul>
+        </div>
+        <div class="d-flex justify-content-end mt-1">
+            <a href="{% url 'meet_the_person' %}" >
+                <button class="btn btn-mine">View More..</button>
+            </a>
+            
+        </div>
+    {% endif %}
+</div>
+
+<!--fullwidth end-->
+{% endblock content %}

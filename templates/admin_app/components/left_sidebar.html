@@ -1,0 +1,95 @@
+{% load static %}
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+        <i class="ion-close"></i>
+    </button>
+
+    <!-- LOGO -->
+    <div class="topbar-left">
+        <div class="text-center bg-logo">
+            <a href="{% url 'dashboard' %}" class="logo"><i class="mdi mdi-bowling text-success"></i> Cinema Jpournal</a>
+            <!-- <a href="{% url 'dashboard' %}" class="logo"><img src="{% static 'admin_app/assets/images/logo.png" height="24" alt="logo"></a> -->
+        </div>
+    </div>
+    <div class="sidebar-user">
+        <img src="{% static 'admin_app/assets/images/users/avatar-6.jpg' %}" alt="user" class="rounded-circle img-thumbnail mb-1">
+        <h6 class="">Admin</h6> 
+        <!-- <p class=" online-icon text-dark"><i class="mdi mdi-record text-success"></i>online</p>                     -->
+        <ul class="list-unstyled list-inline mb-0 mt-2">
+            <li class="list-inline-item">
+                <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Profile"><i class="dripicons-user text-purple"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="{% url 'password_change' %}" class="" data-toggle="tooltip" data-placement="top" title="Change Password"><i class="dripicons-gear text-dark"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="{% url 'logout' %}" class="" data-toggle="tooltip" data-placement="top" title="Log out"
+                    onclick="confirm('Do you want to logout?')"><i class="dripicons-power text-danger"></i>
+                </a>
+            </li>
+        </ul>           
+    </div>
+
+    <div class="sidebar-inner slimscrollleft">
+
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Main</li>
+
+                <li>
+                    <a href="{% url 'dashboard' %}" class="waves-effect">
+                        <i class="dripicons-device-desktop"></i>
+                        <span> Dashboard <span class="badge badge-pill badge-primary float-right"></span></span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="calendar.html" class="waves-effect"><i class="dripicons-to-do"></i><span> Calendar </span></a>
+                </li> -->
+
+                
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-jewel"></i> <span> Latest Release </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'latest_release_add' %}">Add</a></li>
+                        <li><a href="{% url 'latest_release_list' %}">List</a></li>
+                                                           
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-blog"></i><span> Location Report </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'location_report_add' %}">Add</a></li>
+                        <li><a href="{% url 'location_report_list' %}">List</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-graph-pie"></i><span> Meet the Person </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">                                    
+                        <li><a href="{% url 'meet_the_person_add' %}">Add</a></li>
+                        <li><a href="{% url 'meet_the_person_list' %}">List</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-trophy"></i> <span> Teaser and Promose </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">                                   
+                        <li><a href="{% url 'teaser_and_promose_add' %}">Add</a></li>
+                        <li><a href="{% url 'teaser_and_promose_list' %}">List</a></li>
+                        
+                    </ul>
+                </li>
+
+                
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div> <!-- end sidebarinner -->
+</div>
+<!-- Left Sidebar End -->

@@ -1,0 +1,42 @@
+{% extends "user_app/components/base.html" %}
+{% load static %}
+{% block content %}
+<link href="{% static 'django_ckeditor_5/dist/styles.css' %}" type="text/css" media="all" rel="stylesheet">
+<script src="{% static 'django_ckeditor_5/dist/bundle.js' %}"></script>
+<div class="ne_ts_main_section_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="background-color: #fff; margin-top: 10px; margin-bottom: 10px;">
+                <h2 class="text-justify mt-2 mb-2" style="margin-bottom: 15px;">
+                    {{teaser_and_promose.title}}
+                </h2>
+                <!-- {% if teaser_and_promose.image %}
+            <div class="d-flex justify-content-center">
+                <img src="{{ teaser_and_promose.image.url }}" alt="{{ teaser_and_promose.title }}" width="100%">
+            </div> -->
+
+                {% endif %}
+                <p>{{teaser_and_promose.date}}</p>
+                <p>{{teaser_and_promose.author}}</p>
+
+
+                <div class="ck ck-content">
+                    {{ teaser_and_promose.text|safe}}
+                </div>
+            </div>
+            <div class="col-md-4 empty-col">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<style>
+    .empty-col {
+        width: 100%;
+    }
+</style>
+
+{% endblock content %}

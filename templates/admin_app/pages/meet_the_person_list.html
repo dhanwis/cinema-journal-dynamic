@@ -1,0 +1,111 @@
+{% extends "admin_app/components/base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-content-wrapper ">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group float-right">
+                        <!-- <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="#">Zoogler</a></li>
+                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                            <li class="breadcrumb-item active">Responsive</li>
+                        </ol> -->
+                    </div>
+                    <!-- <h4 class="page-title">Meet the Perosn</h4> -->
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="mt-0 header-title">Meet the Perosn</h4>
+                        <p class="text-muted mb-4 font-13">List</p>
+
+                        <div class="table-rep-plugin text-center">
+                            <div class="table-responsive b-0" data-pattern="priority-columns">
+                                <table id="tech-companies-1" class="table table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th data-priority="1">Number</th>
+                                            <th data-priority="1">Image</th>
+                                            <th data-priority="1">date</th>
+                                            <th data-priority="1">author</th>
+                                            <th data-priority="3">Title</th>
+                                            <th data-priority="1">Actions</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for meet_the_person in meet_the_persons %}
+                                            <tr>
+                                                <th> {{ forloop.counter }} </th>
+                                                <td>
+                                                    {% if meet_the_person.image %}
+                                                    <a href="{{ meet_the_person.image.url }}" target="_blank">
+                                                        <img src="{{ meet_the_person.image.url }}" alt="" width="100%"
+                                                            style="max-width: 50px;"
+                                                        >
+                                                    </a>
+                                                        
+                                                    {% else %}
+                                                        None
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ meet_the_person.date }}</td>
+                                                <td>{{ meet_the_person.author }}</td>
+                                                <td>{{ meet_the_person.title|truncatechars:100 }}</td>
+                                                <td>
+                                                    <div class="btn-group btn-group-sm" style="float: none;">
+                                                        <a href="{% url 'meet_the_person_view' meet_the_person.id %}">
+                                                            <button type="button"
+                                                                class="tabledit-edit-button btn btn-sm btn-primary"
+                                                                style="float: none; margin: 4px;"><span
+                                                                    class="ti-eye"></span>
+                                                            </button>
+                                                        </a>
+                                                        
+                                                        <a href="{% url 'meet_the_person_edit' meet_the_person.id %}">
+                                                            <button type="button"
+                                                                class="tabledit-edit-button btn btn-sm btn-success"
+                                                                style="float: none; margin: 4px;"><span
+                                                                    class="ti-pencil"></span>
+                                                            </button>
+                                                        </a>
+                                                        <a href="{% url 'meet_the_person_delete' meet_the_person.id %}"
+                                                            onclick="confirm('Do you want to delete this ?')">
+                                                            <button type="button"
+                                                                class="tabledit-delete-button btn btn-sm btn-danger"
+                                                                style="float: none; margin: 4px;"><span class="ti-trash"></span>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% empty%}
+                                        
+                                        <td>No Data Available</td>
+                                        {% endfor%}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+    </div><!-- container -->
+
+</div> <!-- Page content Wrapper -->
+
+
+
+
+{% endblock content %}
