@@ -9,25 +9,14 @@
                 <h3>Flash News</h3>
             </div>
             <div class="ne_tranding_slider_wrapper">
-                <div class="owl-carousel owl-theme">
+                <div class="">
                     <div class="item">
                         <div class="ne_ts_inner_content">
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
-                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
+                            <p>{{ flash_news.text }}</p>
+                            <h3 class="hidden-sm"></h3>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="ne_ts_inner_content">
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
-                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ne_ts_inner_content">
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh</p>
-                            <h3 class="hidden-sm"><i class="fa fa-calendar"></i> &nbsp;25 OCT, 2017</h3>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -102,14 +91,14 @@
                                                                 <div class="ne_wn_img_overlay"></div>
                                                                 <h2>latest release</h2>
                                                                 <div class="ne_wn_social_inner_wrapper">
-                                                                    <h6><a href="#" style="color: #fff;">{{ latest_release.title|truncatechars:50 }}</a></h6>
+                                                                    <h6><a href="{% url 'latest_release_details' latest_release.slug %}" style="color: #fff;">{{ latest_release.title|truncatechars:50 }}</a></h6>
                                                                     <ul class="ne_wn_social1_wrapper">
                                                                         <li data-animation="animated fadeInLeft"><a
-                                                                                href="#"><i class="fa fa-calendar"></i>
+                                                                                href="{% url 'latest_release_details' latest_release.slug %}"><i class="fa fa-calendar"></i>
                                                                                 &nbsp;25 OCT, 2017</a>
                                                                         </li>
                                                                         <li data-animation="animated fadeInLeft"><a
-                                                                                href="#"><i class="fa fa-user"></i>
+                                                                                href="{% url 'latest_release_details' latest_release.slug %}"><i class="fa fa-user"></i>
                                                                                 &nbsp;Author</a>
                                                                         </li>
                                                                     </ul>
@@ -218,15 +207,18 @@
                                                                     <!-- <h3><a href="#">Award of the year</a></h3> -->
                                                                     <ul class="ne_re_social1_wrapper">
                                                                         <li data-animation="animated fadeInLeft"><a
-                                                                                href="#"><i class="fa fa-calendar"></i>
+                                                                                href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-calendar"></i>
                                                                                 &nbsp;25 OCT, 2017</a>
                                                                         </li>
                                                                         <li data-animation="animated fadeInLeft"><a
-                                                                                href="#"><i class="fa fa-user"></i>
+                                                                                href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-user"></i>
                                                                                 &nbsp;Author</a>
                                                                         </li>
                                                                     </ul>
-                                                                    <p>{{ location_report.title|truncatechars:100 }}</p>                                                                </p>
+                                                                    <a href="{% url 'location_report_details' location_report.slug %}">
+                                                                        <p>{{ location_report.title|truncatechars:100 }}</p>
+                                                                    </a>
+                                                                                                                                    </p>
                                                                     
                                                                 </div>
                                                             </div>
@@ -247,7 +239,7 @@
                                                                 </div>
                                                                 <div class="ne_re_bottom_img_cont">
                                                                     <h6>
-                                                                        <a class="maxLength50" style="font-weight: 500;" href="#">
+                                                                        <a class="maxLength50" style="font-weight: 500;" href="{% url 'location_report_details' location_report.slug %}">
                                                                             {{ location_report.title|truncatechars:100 }}
                                                                         </a>
                                                                         
@@ -255,7 +247,7 @@
 
                                                                         
 
-                                                                    <p><a href="#" style="font-size: 11px;"><i class="fa fa-calendar"></i>
+                                                                    <p><a href="{% url 'location_report_details' location_report.slug %}" style="font-size: 11px;"><i class="fa fa-calendar"></i>
                                                                             &nbsp;25 OCT, 2017</a>
                                                                     </p>
                                                                 </div>
@@ -358,9 +350,9 @@
                                                             </div>
                                                             <div
                                                                 class="ne_re_left_img_cont_main_wrapper ne_buss_img_cont_main_wrapper pt-1">
-                                                                <h6><a href="#">{{ meet_the_person.title|truncatechars:70 }}</a></h6>
+                                                                <h6><a href="{% url 'meet_the_person_details' meet_the_person.slug %}">{{ meet_the_person.title|truncatechars:70 }}</a></h6>
                                                                 <ul class="ne_re_social1_wrapper">
-                                                                    <li data-animation="animated fadeInLeft"><a href="#"><i
+                                                                    <li data-animation="animated fadeInLeft"><a href="{% url 'meet_the_person_details' meet_the_person.slug %}"><i
                                                                                 class="fa fa-calendar"></i> &nbsp;25 OCT,
                                                                             2017</a>
                                                                     </li>
@@ -418,14 +410,17 @@
                                         <div class="ne_re_left_img_cont_main_wrapper">
                                             
                                             <ul class="ne_re_social1_wrapper">
-                                                <li data-animation="animated fadeInLeft"><a href="#"><i
+                                                <li data-animation="animated fadeInLeft"><a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}"><i
                                                             class="fa fa-calendar"></i> &nbsp;{{ teaser_and_promose.date }}</a>
                                                 </li>
-                                                <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-user"></i>
+                                                <li data-animation="animated fadeInLeft"><a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}"><i class="fa fa-user"></i>
                                                         &nbsp;Author</a>
                                                 </li>
                                             </ul>
-                                            <p>{{ teaser_and_promose.title|truncatechars:100 }}</p>
+                                            <a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}">
+                                                <p>{{ teaser_and_promose.title|truncatechars:100 }}</p>
+                                            </a>
+                                            
                                             
                                         </div>
                                     </div>

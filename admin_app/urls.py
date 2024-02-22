@@ -27,4 +27,8 @@ urlpatterns = [
     path('teaser/and/promose/<int:teaser_and_promose_id>/view/', teaser_and_promose_view, name='teaser_and_promose_view'),
     path('teaser/and/promose/<int:teaser_and_promose_id>/edit/', teaser_and_promose_edit, name='teaser_and_promose_edit'),
     path('teaser/and/promose/<int:teaser_and_promose_id>/delete/', teaser_and_promose_delete, name='teaser_and_promose_delete'),
+    
+    path('flash/news/add/', flash_news_add, name='flash_news_add'),
+    path('flash/news/list/', flash_news_list, name='flash_news_list'),
+    path('flash/news/<int:flash_news_id>/delete/', flash_news_delete, name='flash_news_delete')
 ]

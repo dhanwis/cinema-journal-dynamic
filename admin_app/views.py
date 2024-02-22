@@ -247,3 +247,37 @@ def teaser_and_promose_delete(request, teaser_and_promose_id):
 
 
 
+######################################### flash_news #####################################################
+
+
+def flash_news_add(request):
+    if request.method == 'POST':
+        text = request.POST.get('text')
+        flash_news = FlashNews(text=text)
+        flash_news.save()
+        return redirect('flash_news_list')
+    return render(request, 'admin_app/pages/flash_news_add.html')
+
+def flash_news_list(request):
+    flash_newses = FlashNews.objects.all()
+    context = {'flash_newses': flash_newses}
+    return render(request, 'admin_app/pages/flash_news_list.html', context)
+
+
+def flash_news_delete(request, flash_news_id):
+    try: 
+        flash_news = FlashNews.objects.get(id=flash_news_id)
+    except FlashNews.DoesNotExist:
+        return redirect('flash_news_list')
+    
+    try:
+        flash_news.delete()
+        messages.success(request, 'Deleted successfully')
+        return redirect('flash_news_list')
+    except Exception as e:
+        messages.error(request, f'Delete failed: {e}')
+        return redirect('flash_news_list')
+
+    
+    
+    

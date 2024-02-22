@@ -23,3 +23,9 @@
 .mt-1 {
     margin-top: 10px !important;
 }
+
+@media only screen and (max-width: 768px) {
+    .color-change{
+        background-color: #f9ca0b !important;
+    }
+  }

@@ -12,28 +12,38 @@
                 </div>
             </div>
             {% for location_report in location_reports %}
-            <div class="col-md-4 mb-1 ">
-                <div class="ne_re_left_top_main_wrapper">
-                    <div class="ne_re_left_img_main_wrapper ne_re_left_img_main_wrapper2">
-                        <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">
-                        <!-- <h2>location report</h2> -->
-                    </div>
-                    <div class="ne_re_left_img_cont_main_wrapper">
-                        <!-- <h3><a href="#">Award of the year</a></h3> -->
-                        <ul class="ne_re_social1_wrapper mb-1">
-                            <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-calendar"></i>
-                                    &nbsp;25 OCT, 2017</a>
-                            </li>
-                            <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-user"></i>
-                                    &nbsp;Author</a>
-                            </li>
-                        </ul>
-                        <h5>{{ location_report.title|truncatechars:100 }}</h5>
-                        </p>
-
+            <a href="{% url 'location_report_details' location_report.slug %}">
+                <div class="col-md-4 mb-1 ">
+                    <div class="ne_re_left_top_main_wrapper">
+                        <div class="ne_re_left_img_main_wrapper ne_re_left_img_main_wrapper2">
+                            {% if location_report.image %}
+                                <img src="{{ location_report.image.url}}" alt="img">
+                            {% else %}
+                                <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">
+                            {% endif %}
+                            <!-- <h2>location report</h2> -->
+                        </div>
+                        <div class="ne_re_left_img_cont_main_wrapper">
+                            <!-- <h3><a href="#">Award of the year</a></h3> -->
+                            <ul class="ne_re_social1_wrapper mb-1">
+                                <li data-animation="animated fadeInLeft"><a href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-calendar"></i>
+                                        &nbsp;25 OCT, 2017</a>
+                                </li>
+                                <li data-animation="animated fadeInLeft"><a href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-user"></i>
+                                        &nbsp;Author</a>
+                                </li>
+                            </ul>
+                            <a href="{% url 'location_report_details' location_report.slug %}">
+                                <h5>{{ location_report.title|truncatechars:100 }}</h5>
+                            </a>
+                           
+                            </p>
+    
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
+            
             {% if forloop.counter|divisibleby:2 %}
             <div class="col-md-4 empty-col">
             </div>

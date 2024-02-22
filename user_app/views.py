@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from admin_app.models import LatestRelease, LocationReport, MeetThePerson, TeaserAndPromose
+from admin_app.models import LatestRelease, LocationReport, MeetThePerson, TeaserAndPromose, FlashNews
 
 # Create your views here.
 
@@ -11,6 +11,8 @@ def home(request):
     location_reports_two = LocationReport.objects.all().order_by('-id')[1:5]
     meet_the_persons = MeetThePerson.objects.all().order_by('-id')[0:10]
     teaser_and_promoses = TeaserAndPromose.objects.all().order_by('-id')[0:10]
+    flash_news = FlashNews.objects.last()
+    
     
     context = {
         'current_page': current_page,
@@ -20,6 +22,7 @@ def home(request):
         'location_reports_two' : location_reports_two,
         'meet_the_persons' : meet_the_persons,
         'teaser_and_promoses' : teaser_and_promoses,
+        'flash_news' : flash_news
     }
     return render(request, 'user_app/pages/home.html', context)
 

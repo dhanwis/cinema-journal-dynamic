@@ -90,3 +90,8 @@ class TeaserAndPromose(models.Model):
                     self.slug = f"{slugify(self.slug_name)}-{count}"
                     count += 1
         super().save(*args, **kwargs)
+        
+        
+class FlashNews(models.Model):
+    text = models.CharField(max_length=100)
+    date = models.DateField(auto_now_add=True, null=True, blank=True)
