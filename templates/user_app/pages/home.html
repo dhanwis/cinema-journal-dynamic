@@ -208,11 +208,11 @@
                                                                     <ul class="ne_re_social1_wrapper">
                                                                         <li data-animation="animated fadeInLeft"><a
                                                                                 href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-calendar"></i>
-                                                                                &nbsp;25 OCT, 2017</a>
+                                                                                &nbsp;{{ location_report.date }}</a>
                                                                         </li>
                                                                         <li data-animation="animated fadeInLeft"><a
                                                                                 href="{% url 'location_report_details' location_report.slug %}"><i class="fa fa-user"></i>
-                                                                                &nbsp;Author</a>
+                                                                                &nbsp;{{ location_report.author }}</a>
                                                                         </li>
                                                                     </ul>
                                                                     <a href="{% url 'location_report_details' location_report.slug %}">
@@ -248,7 +248,7 @@
                                                                         
 
                                                                     <p><a href="{% url 'location_report_details' location_report.slug %}" style="font-size: 11px;"><i class="fa fa-calendar"></i>
-                                                                            &nbsp;25 OCT, 2017</a>
+                                                                            &nbsp;{{ location_report.date }}</a>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -344,8 +344,11 @@
                                                     <a href="{% url 'meet_the_person_details' meet_the_person.slug %}">
                                                         <div class="ne_re_left_top_main_wrapper">
                                                             <div class="ne_re_left_img_main_wrapper">
-                                                                <img src="{% static 'user_app/images/content/sp1.jpg' %}"
-                                                                    alt="img">
+                                                                {% if meet_the_person.image %}
+                                                                    <img src="{{ meet_the_person.image.url }}" alt="img">
+                                                                {% else %}
+                                                                    <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">
+                                                                {% endif %}
                                                                 <h2>Meet the Person</h2>
                                                             </div>
                                                             <div
@@ -353,8 +356,7 @@
                                                                 <h6><a href="{% url 'meet_the_person_details' meet_the_person.slug %}">{{ meet_the_person.title|truncatechars:70 }}</a></h6>
                                                                 <ul class="ne_re_social1_wrapper">
                                                                     <li data-animation="animated fadeInLeft"><a href="{% url 'meet_the_person_details' meet_the_person.slug %}"><i
-                                                                                class="fa fa-calendar"></i> &nbsp;25 OCT,
-                                                                            2017</a>
+                                                                                class="fa fa-calendar"></i> &nbsp;{{ meet_the_person.date }}</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -389,7 +391,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="ne_busness_main_slider_wrapper aaaaa">
             <div class="ne_recent_heading_main_wrapper middle_heading ">
-                <h2>Teaser and Promos</h2>
+                <h2>Teaser and Promo</h2>
             </div>
         </div>
     </div>
@@ -414,7 +416,7 @@
                                                             class="fa fa-calendar"></i> &nbsp;{{ teaser_and_promose.date }}</a>
                                                 </li>
                                                 <li data-animation="animated fadeInLeft"><a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}"><i class="fa fa-user"></i>
-                                                        &nbsp;Author</a>
+                                                        &nbsp;{{ teaser_and_promose.author }}</a>
                                                 </li>
                                             </ul>
                                             <a href="{% url 'teaser_and_promose_details' teaser_and_promose.slug %}">

@@ -13,9 +13,9 @@
                 <!-- {% if latest_release.image %}
                 <div class="d-flex justify-content-center">
                     <img src="{{ latest_release.image.url }}" alt="{{ latest_release.title }}" width="100%">
-                </div> -->
+                </div>
                     
-                {% endif %}
+                {% endif %} -->
                 <p style="font-size: 13px;">{{latest_release.date}}</p>
                 <p style="font-size: 13px;">{{latest_release.author}}</p>
 
@@ -30,6 +30,11 @@
         </div>
     </div>
 </div>
+
+<!-- <a href="whatsapp://send?text={{ latest_release.title }} {{ request.build_absolute_uri }} data:image/jpeg;base64,{{ latest_release.image.url }}" target="_blank" rel="noopener noreferrer">
+    Share on WhatsApp
+  </a> -->
+  
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <style>
