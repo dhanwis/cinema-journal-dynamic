@@ -9,9 +9,16 @@
     <meta charset="utf-8" />
     <title>Cinema Journal</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="description" content="" />
+    <!-- <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <meta name="author" content="" /> -->
+    
+    <meta property="og:image" 
+        content="
+        {% if current_page == 'latest_release_details' %} https://cinemajournal.pythonanywhere.com{{ latest_release.image.url }} {% else %} {% endif%}
+        "
+    >
+
     <meta name="MobileOptimized" content="320" />
     <!--Template style -->
     <link rel="stylesheet" type="text/css" href="{% static 'user_app/css/animate.css' %}" />
