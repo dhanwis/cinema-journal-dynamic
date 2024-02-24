@@ -12,14 +12,15 @@
     <!-- <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" /> -->
-    <!-- <meta property="og:description" 
-        content="
-        {% if current_page == 'latest_release_details' %} https://cinemajournal.pythonanywhere.com{{ latest_release.image.url }} {% else %} {% endif%}
-        "
-    > -->
+    <meta property="og:description" content="">
     <meta property="og:image" 
         content="
-        {% if current_page == 'latest_release_details' %} https://cinemajournal.pythonanywhere.com{{ latest_release.image.url }} {% else %} {% endif%}
+        {% if current_page == 'latest_release_details' %} https://cinemajournal.pythonanywhere.com{{ latest_release.image.url }} 
+        {% elif current_page == 'location_report_details' %} https://cinemajournal.pythonanywhere.com{{ location_report.image.url}} %}
+        {% elif current_page == 'meet_the_person_details' %} https://cinemajournal.pythonanywhere.com{{ meet_the_person.image.url }} %}
+        {% elif current_page == 'teaser_and_promose_details' %} https://cinemajournal.pythonanywhere.com{{ teaser_and_promose.image.url }} %}
+        {% else %}
+        {% endif%}
         "
     >
 
