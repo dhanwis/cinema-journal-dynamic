@@ -24,10 +24,14 @@
     margin-top: 10px !important;
 }
 
+.text-title{
+    text-align: left;
+}
 @media only screen and (max-width: 768px) {
     .color-change{
         background-color: #f9ca0b !important;
     }
+    
   }
 
   .social-icon:hover {
@@ -35,10 +39,12 @@
     transition: transform 0.3s ease; /* Add a smooth transition */
 }
 
+
 @media only screen and (min-width: 768px) {
     #st-2 {
         top: 200px !important;
     }
+    
 }
 
 
