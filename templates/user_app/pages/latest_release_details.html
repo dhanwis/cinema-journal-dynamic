@@ -31,7 +31,8 @@
     </div>
 </div>
 
-<a href="https://api.whatsapp.com/send?text={{ latest_release.title }}" target="_blank">Share on WhatsApp</a>
+<!-- <a href="https://api.whatsapp.com/send?text={{ latest_release.title }}" target="_blank">Share on WhatsApp</a> -->
+<a href="https://api.whatsapp.com/send?text={{ latest_release.title }}%0A{{ latest_release.text|safe }}" target="_blank">Share on WhatsApp</a>
 
   
 
