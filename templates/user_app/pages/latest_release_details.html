@@ -31,8 +31,8 @@
     </div>
 </div>
 
-<a href="https://api.whatsapp.com/send?text=https://cinemajournal.pythonanywhere.com{{ latest_release.image.url }}%0A{{ latest_release.title }}" target="_blank">Share on WhatsApp</a>
-
+<a href="https://api.whatsapp.com/send?text={{ request.build_absolute_uri }}%0A{{ latest_release.title }}" target="_blank">Share on WhatsApp</a>
+<!-- <p>The current page URL is: {{ request.build_absolute_uri }}</p> -->
 
 
 
