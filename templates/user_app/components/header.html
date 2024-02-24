@@ -119,7 +119,7 @@
     <div class="container color-change">
         <div class="prs_navi_left_main_wrapper">
             <div class="prs_logo_main_wrapper visible-xs">
-                <a href="index.html">
+                <a href="{% url 'home'  %}">
                     <img src="{% static 'user_app/images/header/logo-3.jpg' %}" alt="logo" 
                     style="max-width: 120PX;"
                     />
@@ -138,7 +138,7 @@
                                 {% if current_page == 'home' %} active {% else %} {% endif%}">
                                 <a href="{% url 'home' %}" class="effect_nav">home</a>
                                 <!-- <ul class="lg-submenu">
-                                    <li><a href="index.html">Home-I</a>
+                                    <li><a href="{% url 'home'  %}">Home-I</a>
                                     </li>
                                     <li><a href="index_II.html">Home-II</a>
                                     </li>
