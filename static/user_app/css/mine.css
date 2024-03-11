@@ -39,12 +39,47 @@
     transition: transform 0.3s ease; /* Add a smooth transition */
 }
 
+.st-btn {
+    border-radius: 50% !important;
+    margin-bottom: 5px !important;
+}
 
+.st-btn:hover{
+    border-radius: 0 !important;
+    border-end-end-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+
+.st-btns{
+    overflow: unset !important;
+}
+.st-btns .st-btn{
+    border-radius: 0 !important;
+}
+
+.st-logo {
+    display: none;
+}
+.st-disclaimer  {
+    display: none;
+}
+.st-close {
+    padding: 9px !important;
+}
 @media only screen and (min-width: 768px) {
     #st-2 {
         top: 200px !important;
     }
     
+}
+
+@media only screen and (max-width: 768px) {
+    .st-btn {
+        margin-bottom: 0px !important;
+    }
+    .st-btns{
+        overflow: auto !important;
+    }
 }
 
 

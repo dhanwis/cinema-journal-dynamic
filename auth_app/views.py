@@ -21,3 +21,9 @@ def admin_login(request):
     else:
         error = None
     return render(request, 'auth_app/pages/admin_login.html', {'error': error})
+
+
+
+
+def custom_404(request, exception):
+    return render(request, 'auth_app/pages/404.html', status=404)

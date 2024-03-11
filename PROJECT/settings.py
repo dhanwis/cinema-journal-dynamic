@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j2829#e36ahmc9tcig7orh@a5nn=#&+**6ssw)8db@%0bj+3ke'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -310,3 +310,6 @@ CKEDITOR_5_CONFIGS = {
 # CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage" # optional
 
 CKEDITOR_5_FILE_STORAGE = "admin_app.storage.CustomStorage"
+
+
+handler404 = 'auth_app.views.custom_404'
